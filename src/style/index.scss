@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+$theme-color:rgb(30, 159, 210);
+$disable-text: #AAAAAA;
+$hint-text: gray;
+$counter-byn-text: aliceblue;
+$bottom-border: #DDDDDD;
+.counter {
+  &_wrapper {
+    padding: 8px;
+    width: fit-content;
+  }
+  &_item {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+
+  }
+  &_input {
+    margin: 0 8px;
+    box-sizing: border-box;
+    text-align: center;
+    &:disabled {
+      color: $disable-text;
+      cursor:not-allowed ;
+
+    }
+  }
+  &_btn {
+    background-color: $theme-color;
+    border: lighten($theme-color, 80%);
+    color: $counter-byn-text;
+    &:disabled {
+      background-color: lighten($theme-color, 30%);
+      cursor: not-allowed;
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.room {
+  &_human {
+    &_counter {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 8px 0;
+      &-wrapper {
+        padding: 8px 16px;
+        border-bottom: 1px solid $bottom-border;
+      }
+    }
+    &_text {
+      font-size: 14px;
+      &-hint {
+        color: $hint-text;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+    }
+    &_title {
+      margin-top: 8px;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+  }
+  &_not_allocate {
+    padding: 16px;
+    margin: 16px 0;
+    background-color: lighten($theme-color, 30%);
+    border: 1px solid lighten($theme-color, 20%);
+  }
+  &_allocate {
+    &-wrapper {
+      padding: 24px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+  }
+}
